@@ -1,5 +1,6 @@
 var connection = require('./connection');
 
+//start connection to database
 connection.connect(function(err) {
     if (err) console.error(err);
 
@@ -15,17 +16,19 @@ var orm = {
             cb(res);
         });
     },
-    insertOne: function(table, cb) {
+    insertOne: function(newRow, cb) {
         console.log("insertOne");
-        connection.query('SELECT * FROM ?', [table], function(err, res) {
+
+        connection.query('INSERT INTO ?? SET ?', newRow, function(err, res) {
             if (err) throw err;
 
             cb(res);
         });
     },
-    updateOne: function(table, cb) {
+    updateOne: function(updateRow, cb) {
         console.log("updateOne");
-        connection.query('SELECT * FROM ?', [table], function(err, res) {
+
+        connection.query('UPDATE ?? SET devoured = ? WHERE id = ?', updateRow, function(err, res) {
             if (err) throw err;
 
             cb(res);

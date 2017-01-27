@@ -1,5 +1,5 @@
 var mysql = require('mysql');
-var password = require('./userpass');//for dev only, can comment out
+var password = require('./userpass');//TODO replace with env var password @deploy
 
 var connection = mysql.createConnection({
 	host: 'localhost',
