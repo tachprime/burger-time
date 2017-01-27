@@ -10,7 +10,7 @@ var orm = {
     selectAll: function(table, cb) {
         console.log("selectAll");
         connection.query('SELECT * FROM ??', [table], function(err, res) {
-            if (err) console.error(err);
+            if (err) throw err;
 
             cb(res);
         });
@@ -18,7 +18,7 @@ var orm = {
     insertOne: function(table, cb) {
         console.log("insertOne");
         connection.query('SELECT * FROM ?', [table], function(err, res) {
-            if (err) console.error(err);
+            if (err) throw err;
 
             cb(res);
         });
@@ -26,7 +26,7 @@ var orm = {
     updateOne: function(table, cb) {
         console.log("updateOne");
         connection.query('SELECT * FROM ?', [table], function(err, res) {
-            if (err) console.error(err);
+            if (err) throw err;
 
             cb(res);
         });
