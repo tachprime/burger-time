@@ -25,7 +25,7 @@ var burger = {
     },
 
     devourBurger: function(ateBurger, cb) {
-        console.log("devourBurger");
+        //console.log("devourBurger");
         var eatenBurger = [
             table, {
                 devoured: ateBurger.devoured

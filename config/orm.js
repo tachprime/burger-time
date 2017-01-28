@@ -25,7 +25,7 @@ var orm = {
         });
     },
     updateOne: function(updateRow, cb) {
-        console.log("updateOne");
+        //console.log("updateOne");
         connection.query('UPDATE ?? SET ? WHERE ?', updateRow, function(err, res) {
             if (err) throw err;
 
