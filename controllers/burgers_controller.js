@@ -8,8 +8,9 @@ router.use(bodyParser.urlencoded({
 }));
 
 router.get('/', function(req, res) {
+    console.log("home");
     burger.getAllBurgers(function(data) {
-        //console.log(data);
+        console.log(data);
         res.render('index', {
             burgers: data
         });
