@@ -1,7 +1,7 @@
-var express = require('express');
-var app = express();
-var hbs = require('express-handlebars');
-var burgersController = require('./controllers/burgers_controller');
+const express = require('express');
+const app = express();
+const hbs = require('express-handlebars');
+const burgersController = require('./controllers/burgers_controller');
 
 app.engine('handlebars', hbs({
     defaultLayout: 'main'
