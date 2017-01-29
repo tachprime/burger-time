@@ -3,38 +3,37 @@ const orm = require('../config/orm');
 var table = 'burgers';
 
 var burger = {
-    getAllBurgers: function(cb) {
+    getAllBurgers: function (cb) {
         //console.log("getAllBurgers");
-        orm.selectAll(table, function(res) {
+        orm.selectAll([table], function (res) {
             cb(res);
         });
     },
 
-    addBurger: function(name, cb) {
+    addBurger: function (name, cb) {
         //console.log("addBurger");
         var newBurger = [
-            table, {
+            table,
+            {
                 burger_name: name,
                 devoured: 0
             }
         ];
 
-        orm.insertOne(newBurger, function(res) {
+        orm.insertOne(newBurger, function (res) {
             cb(res);
         });
     },
 
-    devourBurger: function(ateBurger, cb) {
+    devourBurger: function (ateBurger, cb) {
         //console.log("devourBurger");
         var eatenBurger = [
-            table, {
-                devoured: ateBurger.devoured
-            }, {
-                id: ateBurger.id
-            }
+            table,
+            { devoured: ateBurger.devoured },
+            { id: ateBurger.id }
         ];
 
-        orm.updateOne(eatenBurger, function(res) {
+        orm.updateOne(eatenBurger, function (res) {
             cb(res);
         });
     }

@@ -1,7 +1,7 @@
 var mysql = require('mysql');
 var connection;
 
-if(process.env.DATABASE_URL) {
+if (process.env.DATABASE_URL) {
     connection = mysql.createConnection(process.env.DATABASE_URL);
 } else {
     connection = mysql.createConnection({
@@ -13,7 +13,7 @@ if(process.env.DATABASE_URL) {
 }
 
 //start connection to database
-connection.connect(function(err) {
+connection.connect(function (err) {
     if (err) throw err;
 
     console.log("connected to burger DB as %s", connection.threadId);
