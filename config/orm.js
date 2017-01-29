@@ -2,7 +2,7 @@ var connection = require('./connection');
 
 //start connection to database
 connection.connect(function(err) {
-    if (err) console.error(err);
+    if (err) throw err;
 
     console.log("connected to burger DB as %s", connection.threadId);
 });
