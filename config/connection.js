@@ -12,4 +12,11 @@ if(process.env.DATABASE_URL) {
     });
 }
 
+//start connection to database
+connection.connect(function(err) {
+    if (err) throw err;
+
+    console.log("connected to burger DB as %s", connection.threadId);
+});
+
 module.exports = connection;

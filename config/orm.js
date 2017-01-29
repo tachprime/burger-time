@@ -1,12 +1,5 @@
 var connection = require('./connection');
 
-//start connection to database
-connection.connect(function(err) {
-    if (err) throw err;
-
-    console.log("connected to burger DB as %s", connection.threadId);
-});
-
 var orm = {
     selectAll: function(table, cb) {
         //console.log("selectAll");
